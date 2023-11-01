@@ -1,0 +1,43 @@
+image: node:lts
+
+stages:
+  - build
+
+
+before_script:
+  # Add pnpm
+  - curl -f https://get.pnpm.io/v6.js | node - add --global pnpm@6
+  - pnpm config set store-dir .pnpm-store
+
+  # Add zip if needed
+  - 'which zip || (apt-get update -y && apt-get install zip -y)'
+
+  # Add ssh keys for pushing to another repo
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )'
+  - eval "$(ssh-agent -s)"
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - ssh-keyscan -H 'bitbucket.org' >> ~/.ssh/known_hosts
+  - chmod 644 ~/.ssh/known_hosts
+  - git config --global user.name "CI 🤖"
+
+build_deploy:
+  tags:
+    - linux
+  stage: build
+  only:
+    # Runs on the deploy branch
+    - deploy
+  except:
+    # Never runs on the master branch
+    - master
+  script:
+    # Make script excecutable and then run it. (a bash script is more flexible than just running commands from here)
+    - chmod +x .ci/deploy-script.sh
+    - .ci/deploy-script.sh
+  cache:
+    # Some pnpm cleanup thingy
+    key: "$CI_COMMIT_REF_SLUG"
+    paths:
+      - .pnpm-store
