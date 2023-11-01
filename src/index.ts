@@ -9,7 +9,7 @@ import { ForagePersistanceProvider } from "./engine/datamanager/ForagePersistanc
 import { PixiRenderer } from "./engine/scenemanager/renderers/PixiRenderer";
 import { settings } from "@pixi/core";
 import { DEFAULTS } from "tweedle.js";
-import { DuckScene } from "./project/scenes/DuckScene";
+import { MenuScene } from "./project/scenes/MenuScene";
 
 settings.RENDER_OPTIONS.hello = false;
 
@@ -57,4 +57,4 @@ window.addEventListener("resize", () => {
 window.dispatchEvent(new Event("resize"));
 
 // Manager.changeScene(import(/* webpackPrefetch: true */ "./project/scenes/LoaderScene"));
-Manager.changeScene(DuckScene);
+Manager.changeScene(MenuScene);

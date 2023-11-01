@@ -2,17 +2,5 @@
 	"Heroes": {
 		"sheet": "1GTDtwBPO8Ajx_0QWW_wMVJ2Ojq98vH7Lv8ue0D_Gzr0",
 		"gid": "0"
-	},
-	"Items": {
-		"sheet": "1GTDtwBPO8Ajx_0QWW_wMVJ2Ojq98vH7Lv8ue0D_Gzr0",
-		"gid": "1434549035"
-	},
-	"Dungeons": {
-		"sheet": "1GTDtwBPO8Ajx_0QWW_wMVJ2Ojq98vH7Lv8ue0D_Gzr0",
-		"gid": "121497311"
-	},
-	"NPCs": {
-		"sheet": "1GTDtwBPO8Ajx_0QWW_wMVJ2Ojq98vH7Lv8ue0D_Gzr0",
-		"gid": "237039881"
 	}
 }

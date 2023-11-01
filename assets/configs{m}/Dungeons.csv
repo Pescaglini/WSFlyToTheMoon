@@ -1,5 +1,0 @@
-"Id","Name","Monsters","","","Drops (Items)",""
-"","","","","","common","rare"
-"DUNGEON001","Easy Field","MONSTER001","","","ITEM_POTION001","ITEM_LVUP001"
-"DUNGEON002","Expert Zone","MONSTER001","MONSTER002","","ITEM_POTION002","ITEM_LVUP002"
-"DUNGEON003","Dragon’s Nest","MONSTER003","MONSTER004","MONSTER005","ITEM_LVUP003",""
