@@ -79,6 +79,7 @@
     "@pixi/core": "7.3.1",
     "@pixi/display": "7.3.1",
     "@pixi/events": "7.3.1",
+    "@pixi/filter-kawase-blur": "^5.1.1",
     "@pixi/graphics": "7.3.1",
     "@pixi/graphics-smooth": "1.1.0",
     "@pixi/mesh": "7.3.1",

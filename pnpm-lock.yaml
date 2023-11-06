@@ -16,6 +16,7 @@ specifiers:
   '@pixi/core': 7.3.1
   '@pixi/display': 7.3.1
   '@pixi/events': 7.3.1
+  '@pixi/filter-kawase-blur': ^5.1.1
   '@pixi/graphics': 7.3.1
   '@pixi/graphics-smooth': 1.1.0
   '@pixi/mesh': 7.3.1
@@ -80,6 +81,7 @@ dependencies:
   '@pixi/core': 7.3.1
   '@pixi/display': 7.3.1_@pixi+core@7.3.1
   '@pixi/events': 7.3.1_m3nymbnq5s6svjlvjesf6bbkly
+  '@pixi/filter-kawase-blur': 5.1.1_@pixi+core@7.3.1
   '@pixi/graphics': 7.3.1_o3bchlhf3zlj4wu7fmubmyavpm
   '@pixi/graphics-smooth': 1.1.0_jf3fkgmpe3h4xly236cxqv7yoa
   '@pixi/mesh': 7.3.1_m3nymbnq5s6svjlvjesf6bbkly
@@ -2876,6 +2878,14 @@ packages:
 
   /@pixi/extensions/7.3.1:
     resolution: {integrity: sha512-KiM1uXnNQ6yjJ/8gYuqBVZxw1CPH0LRoUvnOWXrHXm74somNtJdxnEliq3zagGpyxjmiHHJmI0Y9gnXrhzVU4Q==}
+    dev: false
+
+  /@pixi/filter-kawase-blur/5.1.1_@pixi+core@7.3.1:
+    resolution: {integrity: sha512-nPnJ1ChBFP+4pgFCwC0RJgHAJCetiHcQU3INH7zCdq88cFABmVmhN+wCKRNg4H7lF1EJjaXgFDkTrTreOD/bnw==}
+    peerDependencies:
+      '@pixi/core': ^7.0.0-X
+    dependencies:
+      '@pixi/core': 7.3.1
     dev: false
 
   /@pixi/graphics-smooth/1.1.0_jf3fkgmpe3h4xly236cxqv7yoa:
