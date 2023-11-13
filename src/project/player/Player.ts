@@ -1,11 +1,9 @@
-import { Container } from "@pixi/display";
 import { PlayerVisuals } from "./PlayerVisuals";
 
-export class Player extends Container {
+export class Player {
 	private health: number;
 	public visuals: PlayerVisuals;
 	constructor() {
-		super();
 		this.health = 100;
 		this.visuals = new PlayerVisuals();
 		console.log(this.health);

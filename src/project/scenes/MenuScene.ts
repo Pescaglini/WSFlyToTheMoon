@@ -7,6 +7,8 @@ import { Easing, Tween } from "tweedle.js";
 import { TilingSprite } from "@pixi/sprite-tiling";
 import { Container } from "@pixi/display";
 import { EventEmitter } from "@pixi/utils";
+import { Manager } from "../..";
+import { WaveSurvivalScene } from "./WaveSurvivalScene";
 
 export class MenuScene extends PixiScene {
 	public static readonly BUNDLES = ["img"];
@@ -92,6 +94,7 @@ export class MenuScene extends PixiScene {
 		hand.angle = 90;
 		hand.visible = false;
 		const saveFileImage = Sprite.from("menuUI/saveFileImage2.png");
+		saveFileImage.eventMode = "dynamic";
 		saveFileImage.anchor.set(0.5);
 		saveFileImage.scale.set(0.5);
 		saveFileImage.visible = false;
@@ -115,7 +118,10 @@ export class MenuScene extends PixiScene {
 					imagePlace = true;
 				})
 				.onComplete(() => {
-					saveFileImage.on("mousedown");
+					saveFileImage.once("mousedown", () => {
+						this.destroyEverything();
+						Manager.changeScene(WaveSurvivalScene);
+					});
 				})
 				.easing(Easing.Elastic.InOut)
 				.yoyo(true)
@@ -126,6 +132,12 @@ export class MenuScene extends PixiScene {
 		});
 
 		this.addChild(this.backgroundCardboard, this.pagesContainer);
+	}
+
+	private destroyEverything(): void {
+		this.title.destroy();
+		this.playButton.destroy();
+		this.pagesContainer.destroy();
 	}
 
 	private passPage(currentPageIndex: number): void {
