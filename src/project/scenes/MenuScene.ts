@@ -114,6 +114,9 @@ export class MenuScene extends PixiScene {
 				.onRepeat(() => {
 					imagePlace = true;
 				})
+				.onComplete(() => {
+					saveFileImage.on("mousedown");
+				})
 				.easing(Easing.Elastic.InOut)
 				.yoyo(true)
 				.repeat(1)
